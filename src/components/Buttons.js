@@ -12,8 +12,10 @@ const Buttons = (props)=>{
 
     // sort by firstname
     const nameSort = ()=>{
-        newArr = [...empArray].sort((a,b)=>(a.name > b.name) ? 1 : -1)
-        
+        const newArr = [...empArray].sort((a,b)=>(a.name > b.name) ? 1 : -1)
+        props.setEmpArrState({
+            employees: newArr
+        })
     }
 
     // sort by lastname
@@ -24,7 +26,7 @@ const Buttons = (props)=>{
     return(
         <>
         <Col xs={3} >
-            <button className="btn btn-primary" >
+            <button className="btn btn-primary" onClick={nameSort} >
                 sort by bla
             </button>
         </Col>

@@ -28,7 +28,7 @@ const ShowEmployees = ()=>{
                 </>
             </Row>
             <Row className="buttonArea" >
-                <Buttons empArray={empArr.employees} />
+                <Buttons empArray={empArr.employees} setEmpArrState={setEmpArrState} />
             </Row>
         </Container>
     )
