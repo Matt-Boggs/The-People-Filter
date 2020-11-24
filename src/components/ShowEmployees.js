@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Container, Row, Col, Card,  } from "react-bootstrap"
 import EmpCard from "./EmpCard";
+import Buttons from "./Buttons"
 import EmpJSON from "../employees.json"
 import { useEffect } from "react";
 
@@ -25,6 +26,9 @@ const ShowEmployees = ()=>{
                     </Col>)
                 })}
                 </>
+            </Row>
+            <Row className="buttonArea" >
+                <Buttons empArray={empArr.employees} />
             </Row>
         </Container>
     )
