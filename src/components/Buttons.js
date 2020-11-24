@@ -23,7 +23,16 @@ const Buttons = (props)=>{
             employees: newArr,
             sortNum: newSort
         })
+    }
 
+    const jobSort = ()=>{
+        var newArr = [...empArray].sort((a,b)=>(a.job > b.job) ? (props.sortNum) : -(props.sortNum))
+        var newSort = (props.sortNum) * -1
+        // const revArr = newArr.reverse()
+        props.setEmpArrState({
+            employees: newArr,
+            sortNum: newSort
+        })
     }
 
     // sort by lastname
@@ -35,12 +44,12 @@ const Buttons = (props)=>{
         <>
         <Col xs={3} >
             <button className="btn btn-primary" onClick={nameSort} >
-                sort by bla
+                Sort by Name, Click again to reverse
             </button>
         </Col>
         <Col xs={3} >
-            <button className="btn btn-secondary">
-                sort by bla
+            <button className="btn btn-secondary" onClick={jobSort}>
+                Sort by Job
             </button>
         </Col>
         <Col xs={3} >
