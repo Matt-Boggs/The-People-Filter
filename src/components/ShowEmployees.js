@@ -18,73 +18,13 @@ const ShowEmployees = ()=>{
     return (
         <Container>
             <Row>
-                <Col className="card">
-                    <EmpCard />
-                </Col>
-                <Col className="card">
-                    <div className="card-body">
-                        <div className="card-title">
-                            bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                    </div>
-                </Col>
-                <Col className="card">
-                    <div className="card-body">
-                        <div className="card-title">
-                            bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                    </div>
-                </Col>
-                <Col className="card">
-                    <div className="card-body">
-                        <div className="card-title">
-                            bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                    </div>
-                </Col>
-                <Col className="card">
-                    <div className="card-body">
-                        <div className="card-title">
-                            bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                    </div>
-                </Col>
+                <>
+                {empArr.employees.map(employee=>{
+                    return(<Col className="card">
+                        <EmpCard key={employee.id} result={employee} />
+                    </Col>)
+                })}
+                </>
             </Row>
         </Container>
     )
