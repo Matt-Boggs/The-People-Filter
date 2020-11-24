@@ -1,5 +1,6 @@
 .card {
-  /* outline: black solid 2px; */
+  outline: black solid 2px;
+  background-color: cornflowerblue;
 }
 
 header {
