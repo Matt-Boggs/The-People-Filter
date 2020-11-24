@@ -1,14 +1,42 @@
 import React from "react";
+import { useState } from "react";
 import { Container, Row, Col, Card,  } from "react-bootstrap"
-const ShowEmployees = ()=>{
+import EmpCard from "./EmpCard";
+import EmpJSON from "../employees.json"
+import { useEffect } from "react";
 
+
+const ShowEmployees = ()=>{
+    const[empArr, setEmpArrState] = useState({
+        employees: EmpJSON
+    })
+    
+    useEffect(()=>{
+        console.log(empArr)
+    },[])
 
     return (
         <Container>
-            <button className="btn btn-success">button</button>
             <Row>
-                <Col xs={1}></Col>
-
+                <Col className="card">
+                    <EmpCard />
+                </Col>
+                <Col className="card">
+                    <div className="card-body">
+                        <div className="card-title">
+                            bob
+                        </div>
+                        <div className="card-text">
+                            stuff about bob
+                        </div>
+                        <div className="card-text">
+                            stuff about bob
+                        </div>
+                        <div className="card-text">
+                            stuff about bob
+                        </div>
+                    </div>
+                </Col>
                 <Col className="card">
                     <div className="card-body">
                         <div className="card-title">
@@ -41,7 +69,7 @@ const ShowEmployees = ()=>{
                         </div>
                     </div>
                 </Col>
-                {/* <div className="card col-2">
+                <Col className="card">
                     <div className="card-body">
                         <div className="card-title">
                             bob
@@ -56,57 +84,7 @@ const ShowEmployees = ()=>{
                             stuff about bob
                         </div>
                     </div>
-                </div>
-                <div className="card col-2">
-                    <div className="card-body">
-                        <div className="card-title">
-                            bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                    </div>
-                </div>
-                <div className="card col-2">
-                    <div className="card-body">
-                        <div className="card-title">
-                            bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                    </div>
-                </div>
-                <div className="card col-2">
-                    <div className="card-body">
-                        <div className="card-title">
-                            bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                        <div className="card-text">
-                            stuff about bob
-                        </div>
-                    </div>
-                </div> */}
-
-                <Col xs={1}></Col>
+                </Col>
             </Row>
         </Container>
     )
