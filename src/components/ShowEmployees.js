@@ -9,7 +9,8 @@ import { useEffect } from "react";
 
 const ShowEmployees = ()=>{
     const[empArr, setEmpArrState] = useState({
-        employees: EmpJSON
+        employees: EmpJSON,
+        sortNum: 1
     })
     
     useEffect(()=>{
@@ -28,7 +29,7 @@ const ShowEmployees = ()=>{
                 </>
             </Row>
             <Row className="buttonArea" >
-                <Buttons empArray={empArr.employees} setEmpArrState={setEmpArrState} />
+                <Buttons empArray={empArr.employees} sortNum={empArr.sortNum} setEmpArrState={setEmpArrState} />
             </Row>
         </Container>
     )

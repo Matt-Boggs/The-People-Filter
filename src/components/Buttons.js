@@ -1,8 +1,12 @@
 import React from "react";
+import { useEffect } from "react";
 import {Col} from "react-bootstrap"
 
 const Buttons = (props)=>{
     const empArray = props.empArray
+    useEffect(()=>{
+        console.log(props.sortNum)
+    },[props.sortNum])
 
     // list.sort((a, b) => (a.color > b.color) ? 1 : -1)
 
@@ -12,10 +16,14 @@ const Buttons = (props)=>{
 
     // sort by firstname
     const nameSort = ()=>{
-        const newArr = [...empArray].sort((a,b)=>(a.name > b.name) ? 1 : -1)
+        var newArr = [...empArray].sort((a,b)=>(a.name > b.name) ? (props.sortNum) : -(props.sortNum))
+        var newSort = (props.sortNum) * -1
+        // const revArr = newArr.reverse()
         props.setEmpArrState({
-            employees: newArr
+            employees: newArr,
+            sortNum: newSort
         })
+
     }
 
     // sort by lastname
