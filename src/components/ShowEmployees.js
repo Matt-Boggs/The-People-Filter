@@ -20,7 +20,7 @@ const ShowEmployees = ()=>{
             <Row>
                 <>
                 {empArr.employees.map(employee=>{
-                    return(<Col className="card">
+                    return(<Col xs={2} className="card">
                         <EmpCard key={employee.id} result={employee} />
                     </Col>)
                 })}
